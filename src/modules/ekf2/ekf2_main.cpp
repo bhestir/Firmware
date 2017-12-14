@@ -737,7 +737,7 @@ void Ekf2::run()
 					float balt_data_avg = _balt_data_sum / (float)_balt_sample_count;
 
 					// estimate air density assuming typical 20degC ambient temperature
-					const float pressure_to_density = 100.0f / (CONSTANTS_AIR_GAS_CONST * (20.0f - CONSTANTS_ABSOLUTE_NULL_CELSIUS));
+					const float pressure_to_density = 1.0f / (CONSTANTS_AIR_GAS_CONST * (20.0f - CONSTANTS_ABSOLUTE_NULL_CELSIUS));
 					const float rho = pressure_to_density * sensors.baro_pessure_pa;
 					_ekf.set_air_density(rho);
 
